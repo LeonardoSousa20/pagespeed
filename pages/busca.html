@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PAGESPEED v0.8</title>
+  <link rel="stylesheet" href="/style.css">
+
+
+  <script src="/JS/jquery-3.6.0.min.js"></script>
+  <script src="/js/jquery-dateformat.js"></script>
+</head>
+
+<body>
+  <div class="header">
+    <div class="logo"><img src="/img/logo.png" alt=""></div>
+    <div class="header-infos"><span id="version"></span></div>
+  </div>
+
+  <div class="container">
+    <div class="side-bar">
+      <div class="menu">
+        <div class="menu-item" style="border-left: 5px solid rgba(43, 196, 195, 1)">
+
+          <img src="/img/pesquisar-svg.png" alt="">
+          <span"><a href="busca.html">Buscar Lojas</a></span>
+
+        </div>
+
+        <div class="menu-item">
+
+          <img src="/img/analise-svg.png" alt="">
+          <span><a href="analisar.html">Analises de Lojas</a></span>
+
+        </div>
+
+        <div class="menu-item">
+
+          <img src="/img/upload-svg.png" alt="">
+          <span><a href="cadastrar.html">Cadastrar Lojas</a></span>
+
+        </div>
+      </div>
+
+
+
+
+
+
+    </div>
+    <div class="conteudo m-width">
+      <h2 class="titulo">Buscar Lojas</h2>
+      <div class=" resultado">
+        <div class="input-div" id="input-div">
+          <input type="text" placeholder="Insira o ID da loja" class="input-pesquisa" onkeypress="return event.charCode >= 48 && event.charCode <= 57" id="loja-id-busca">
+          <button id="buscar">Buscar</button>
+        </div>
+        <div id="response" class="response">
+          <div id="response-cadastro"></div>
+        </div>
+        <div id="resultado-busca">
+
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+  <div class="modal-ativacao" id="modal-ativacao">
+    <div class="resultado m-width modal-content" id="modal-content">
+      <div>
+        <span>Deseja <span id="status-confirm"></span> a analise loja
+          <span id="confirm-dominio" class="confirm-dominio">
+
+          </span>
+          ?</span>
+      </div>
+      <div>
+        <button class="btn-light" id="cancel-confirm">Cancelar</button>
+        <button id="confirm"></button>
+
+      </div>
+    </div>
+  </div>
+  <script src="/js/buscarLojas.js"></script>
+  <script src="/js/scrpit.js"></script>
+</body>
+
+</html>
