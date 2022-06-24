@@ -8,9 +8,7 @@ body {
 a {
   text-decoration: none;
   color: #607081;
-}
-.m-width {
-  width: 70% !important;
+  width: 100%;
 }
 .header {
   background-color: white;
@@ -21,48 +19,108 @@ a {
   box-sizing: border-box;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
 }
 .header span {
   font-weight: 300;
   font-size: 12px;
 }
-.logo img {
+.logo svg {
   width: 135px;
   height: 27.3px;
 }
-.container {
-  display: grid;
-  grid-template-columns: 250px 1fr;
-  gap: 15px;
-  height: 200px;
-}
 .side-bar {
-  background-color: #e8e9eb;
-  min-width: 250px;
-  height: 100vh;
+  --tw-bg-opacity: 1;
+  margin-top: 72px;
+  width: 250px;
+  background-color: rgba(232, 233, 235, var(--tw-bg-opacity));
+  bottom: 0;
+  flex-direction: column;
+  max-width: 100%;
+  position: fixed;
+  top: 0;
+  transition-duration: 0.2s;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   box-sizing: border-box;
 }
-
-.menu {
-  display: grid;
+nav {
+  overflow-y: hidden;
+  background: linear-gradient(#e8e9eb 33%, hsla(0, 0%, 100%, 0)),
+    linear-gradient(hsla(0, 0%, 100%, 0), #e8e9eb 66%) 0 100%,
+    radial-gradient(farthest-side at 50% 0, hsla(0, 0%, 61%, 0.5), transparent),
+    radial-gradient(
+        farthest-side at 50% 100%,
+        hsla(0, 0%, 61%, 0.5),
+        transparent
+      )
+      0 100%;
+  background-attachment: local, local, scroll, scroll;
+  background-color: #e8e9eb;
+  background-repeat: no-repeat;
+  background-size: 100% 15px, 100% 15px, 100% 5px, 100% 5px;
+  --tw-shadow: 0 0 #0000;
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  height: 100%;
+  max-height: 100vh;
+  overflow-y: auto;
+  padding-bottom: 0.625rem;
+  padding-top: 0.625rem;
+  overflow: overlay;
+  overscroll-behavior: contain;
+  position: relative;
+  z-index: 1;
+}
+.sidebar-item-btn:hover {
+  color: #463758;
+}
+.sidebar-item-btn {
+  --tw-text-opacity: 1;
+  color: rgba(70, 55, 88, var(--tw-text-opacity));
+  padding-bottom: 0.625rem;
+  padding-top: 0.625rem;
+  --tw-text-opacity: 1;
+  align-items: center;
+  color: rgba(96, 112, 129, var(--tw-text-opacity));
+  display: flex;
   font-size: 0.875rem;
   font-weight: 600;
   letter-spacing: -0.025rem;
-  line-height: 24px;
-  color: #607081;
-  margin-top: 20px;
-}
-
-.menu-item {
-  display: grid;
-  grid-template-columns: 20px 1fr;
-  cursor: pointer;
+  line-height: 1.25rem;
+  padding: 0.875rem 1.5rem;
+  position: relative;
+  transition-duration: 0.2s;
+  border-color: currentColor;
+  height: 44px;
   box-sizing: border-box;
-  gap: 13px;
+}
+.sidebar-item img {
   align-items: center;
-  justify-items: start;
-  width: 250px;
-  padding: 15px 20px;
+}
+.sidebar-item span {
+  align-items: center;
+  line-height: 1.5rem;
+  margin-left: 1rem;
+  overflow: hidden;
+  place-content: space-between;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+.active *::after {
+  --tw-bg-opacity: 1;
+  background-color: rgba(43, 196, 195, var(--tw-bg-opacity));
+  height: 2.25rem;
+  left: 0;
+  margin-top: 0.5rem;
+  position: absolute;
+  top: 0;
+  width: 0.25rem;
+  border: 0 solid;
+  box-sizing: border-box;
+  content: "";
+  margin-top: 0.25rem;
 }
 /* Conteudo */
 .titulo {
@@ -72,7 +130,10 @@ a {
 .conteudo {
   box-sizing: border-box;
   margin: 0 20px;
-  width: 90%;
+  width: 60%;
+  position: absolute;
+  margin: 100px 450px;
+  transition: 2s;
 }
 .resultado {
   border: 1px solid rgba(206, 212, 216, 1);
@@ -165,6 +226,7 @@ a {
   align-items: center;
   padding: 0 20px;
   font-size: 14px;
+  width: 800px;
 }
 .confirm-dominio {
   font-weight: bold;
@@ -192,10 +254,12 @@ input[type="text"]:focus {
   border-color: rgba(43, 196, 195, 1);
 }
 input[type="text"].input-pesquisa {
-  background-image: url(img/pesquisar-svg.png);
-  background-position: 10px 13px;
+  background-image: url(img/search-svgrepo-com@2x.png);
+  background-position: 7px 13px;
   background-repeat: no-repeat;
+  background-size: 24px 24px;
 }
+
 button {
   align-items: center;
   background-color: rgba(43, 196, 195, 1);
@@ -255,10 +319,16 @@ canvas {
 
 @media only screen and (max-width: 1300px) {
   .conteudo {
-    max-width: 80%;
+    max-width: 100%;
+    margin-left: 300px;
+    margin-right: 100px;
+    transition: 2s;
+  }
+  .resultado {
+    width: 90%;
   }
   input[type="text"] {
-    max-width: 150px;
+    max-width: 120px;
     transition: 2s;
   }
 }
