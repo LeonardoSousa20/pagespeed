@@ -20,6 +20,7 @@ a {
   justify-content: space-between;
   align-items: center;
   position: fixed;
+  z-index: 1;
 }
 .header span {
   font-weight: 300;
@@ -75,6 +76,12 @@ nav {
 .sidebar-item-btn:hover {
   color: #463758;
 }
+.sidebar-item-btn:hover svg path,
+.sidebar-item-btn:hover {
+  fill: #463758;
+  color: #463758;
+}
+
 .sidebar-item-btn {
   --tw-text-opacity: 1;
   color: rgba(70, 55, 88, var(--tw-text-opacity));
@@ -122,6 +129,7 @@ nav {
   content: "";
   margin-top: 0.25rem;
 }
+
 /* Conteudo */
 .titulo {
   color: rgba(70, 55, 88, 1);
@@ -218,6 +226,7 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 2;
 }
 .modal-content {
   height: 100px;
@@ -283,7 +292,7 @@ button:hover {
   background-color: #0c9797;
 }
 .response {
-  margin-bottom: 50px;
+  margin-top: 30px;
   height: 10px;
   padding: 20px 32px;
   place-content: center;

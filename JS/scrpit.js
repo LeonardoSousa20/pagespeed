@@ -1,3 +1,3 @@
 $("#response").hide();
-$("#version").text("v.08");
+$("#version").text("v.09");
 $("#modal-ativacao").hide();

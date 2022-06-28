@@ -4,7 +4,7 @@ $("#buscar").click(function () {
     const urlId =
       `https://pagespeed.awsli.com.br/v1/lojas/` + $("#loja-id-busca").val();
 
-    $.getJSON(urlId, function (data) {
+    let xhr = $.getJSON(urlId, function (data) {
       /*Fazendo o get na api com a URL definida em uma const*/
 
       var lojas_data = "";
@@ -57,6 +57,13 @@ $("#buscar").click(function () {
       $("#resultado-busca").append(lojas_data);
       $("#input-div").css("border-bottom", "1px solid rgba(206, 212, 216, 1)");
       $("#input-div").css("height", "100px");
+    }).fail(function () {
+      var status = xhr.status;
+      if (status === 404) {
+        $("#response-busca").text("Loja não encontrada");
+        $("#response").addClass("fail");
+        $("#response").show("500").delay(5000).fadeOut(1000);
+      }
     });
   } else {
     $.getJSON(url, function (data) {

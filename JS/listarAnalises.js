@@ -6,7 +6,7 @@ $("#listarAnalise").click(function () {
   if ($("#idLoja").val() == "") {
     alert("Digite um ID");
   } else if (!$("#idLoja").val() == "") {
-    $.getJSON(url, function (data) {
+    let xhr = $.getJSON(url, function (data, statusText, xhr) {
       labelsDesktop = [];
       labelsMobile = [];
 
@@ -23,32 +23,29 @@ $("#listarAnalise").click(function () {
       /* Criando Arrays Desktop*/
       data.forEach((element) => {
         if (element.strategy == "desktop") {
-          labelsDesktop.push(element.createdAt.split("T")[0]);
+          labelsDesktop.push($.format.date(element.createdAt, "dd/MM/yyyy"));
           labelsDesktop = labelsDesktop.slice(0, 10);
         }
       });
       data.forEach((element) => {
         if (element.strategy == "desktop") {
           ScoreDesktop.push(element.score);
-          ScoreDesktop = ScoreDesktop.reverse().slice(0, 10);
-          ScoreDesktop = ScoreDesktop.reverse();
+          ScoreDesktop = ScoreDesktop.slice(0, 10);
         }
       });
       data.forEach((element) => {
         if (element.strategy == "desktop") {
           first_contentful_paintDesktop.push(element.first_contentful_paint);
-          first_contentful_paintDesktop = first_contentful_paintDesktop
-            .reverse()
-            .slice(0, 10);
-          first_contentful_paintDesktop =
-            first_contentful_paintDesktop.reverse();
+          first_contentful_paintDesktop = first_contentful_paintDesktop.slice(
+            0,
+            10
+          );
         }
       });
       data.forEach((element) => {
         if (element.strategy == "desktop") {
           speed_indexDesktop.push(element.speed_index);
-          speed_indexDesktop = speed_indexDesktop.reverse().slice(0, 10);
-          speed_indexDesktop = speed_indexDesktop.reverse();
+          speed_indexDesktop = speed_indexDesktop.slice(0, 10);
         }
       });
       data.forEach((element) => {
@@ -56,39 +53,29 @@ $("#listarAnalise").click(function () {
           largest_contentful_paintDesktop.push(
             element.largest_contentful_paint
           );
-          largest_contentful_paintDesktop = largest_contentful_paintDesktop
-            .reverse()
-            .slice(0, 10);
           largest_contentful_paintDesktop =
-            largest_contentful_paintDesktop.reverse();
+            largest_contentful_paintDesktop.slice(0, 10);
         }
       });
       data.forEach((element) => {
         if (element.strategy == "desktop") {
           time_to_interactiveDesktop.push(element.time_to_interactive);
-          time_to_interactiveDesktop = time_to_interactiveDesktop
-            .reverse()
-            .slice(0, 10);
-          time_to_interactiveDesktop = time_to_interactiveDesktop.reverse();
+          time_to_interactiveDesktop = time_to_interactiveDesktop.slice(0, 10);
         }
       });
       data.forEach((element) => {
         if (element.strategy == "desktop") {
           total_blocking_timeDesktop.push(element.total_blocking_time);
-          total_blocking_timeDesktop = total_blocking_timeDesktop
-            .reverse()
-            .slice(0, 10);
-          total_blocking_timeDesktop = total_blocking_timeDesktop.reverse();
+          total_blocking_timeDesktop = total_blocking_timeDesktop.slice(0, 10);
         }
       });
       data.forEach((element) => {
         if (element.strategy == "desktop") {
           cumulative_layout_shiftDesktop.push(element.cumulative_layout_shift);
-          cumulative_layout_shiftDesktop = cumulative_layout_shiftDesktop
-            .reverse()
-            .slice(0, 10);
-          cumulative_layout_shiftDesktop =
-            cumulative_layout_shiftDesktop.reverse();
+          cumulative_layout_shiftDesktop = cumulative_layout_shiftDesktop.slice(
+            0,
+            10
+          );
         }
       });
 
@@ -173,70 +160,59 @@ $("#listarAnalise").click(function () {
       /* Criando Arrays Mobile*/
       data.forEach((element) => {
         if (element.strategy == "mobile") {
-          labelsMobile.push(element.createdAt.split("T")[0]);
-          labelsMobile = labelsMobile.reverse().slice(0, 10);
-          labelsMobile = labelsMobile.reverse();
+          labelsMobile.push($.format.date(element.createdAt, "dd/MM/yyyy"));
+          labelsMobile = labelsMobile.slice(0, 10);
         }
       });
       data.forEach((element) => {
         if (element.strategy == "mobile") {
           ScoreMobile.push(element.score);
-          ScoreMobile = ScoreMobile.reverse().slice(0, 10);
-          ScoreMobile = ScoreMobile.reverse();
+          ScoreMobile = ScoreMobile.slice(0, 10);
         }
       });
       data.forEach((element) => {
         if (element.strategy == "mobile") {
           first_contentful_paintMobile.push(element.first_contentful_paint);
-          first_contentful_paintMobile = first_contentful_paintMobile
-            .reverse()
-            .slice(0, 10);
-          first_contentful_paintMobile = first_contentful_paintMobile.reverse();
+          first_contentful_paintMobile = first_contentful_paintMobile.slice(
+            0,
+            10
+          );
         }
       });
       data.forEach((element) => {
         if (element.strategy == "mobile") {
           speed_indexMobile.push(element.speed_index);
-          speed_indexMobile = speed_indexMobile.reverse().slice(0, 10);
-          speed_indexMobile = speed_indexMobile.reverse();
+          speed_indexMobile = speed_indexMobile.slice(0, 10);
         }
       });
       data.forEach((element) => {
         if (element.strategy == "mobile") {
           largest_contentful_paintMobile.push(element.largest_contentful_paint);
-          largest_contentful_paintMobile = largest_contentful_paintMobile
-            .reverse()
-            .slice(0, 10);
-          largest_contentful_paintMobile =
-            largest_contentful_paintMobile.reverse();
+          largest_contentful_paintMobile = largest_contentful_paintMobile.slice(
+            0,
+            10
+          );
         }
       });
       data.forEach((element) => {
         if (element.strategy == "mobile") {
           time_to_interactiveMobile.push(element.time_to_interactive);
-          time_to_interactiveMobile = time_to_interactiveMobile
-            .reverse()
-            .slice(0, 10);
-          time_to_interactiveMobile = time_to_interactiveMobile.reverse();
+          time_to_interactiveMobile = time_to_interactiveMobile.slice(0, 10);
         }
       });
       data.forEach((element) => {
         if (element.strategy == "mobile") {
           total_blocking_timeMobile.push(element.total_blocking_time);
-          total_blocking_timeMobile = total_blocking_timeMobile
-            .reverse()
-            .slice(0, 10);
-          total_blocking_timeMobile = total_blocking_timeMobile.reverse();
+          total_blocking_timeMobile = total_blocking_timeMobile.slice(0, 10);
         }
       });
       data.forEach((element) => {
         if (element.strategy == "mobile") {
           cumulative_layout_shiftMobile.push(element.cumulative_layout_shift);
-          cumulative_layout_shiftMobile = cumulative_layout_shiftMobile
-            .reverse()
-            .slice(0, 10);
-          cumulative_layout_shiftMobile =
-            cumulative_layout_shiftMobile.reverse();
+          cumulative_layout_shiftMobile = cumulative_layout_shiftMobile.slice(
+            0,
+            10
+          );
         }
       });
 
@@ -307,9 +283,17 @@ $("#listarAnalise").click(function () {
           },
         },
       });
+      $("#analiseDesktop").show(1000);
+      $("#analiseMobile").show(1000);
+    }).fail(function () {
+      var status = xhr.status;
+      if (status === 404) {
+        console.log("opa");
+        $("#response-analise").text("Loja não encontrada");
+        $("#response").removeClass("sucess");
+        $("#response").addClass("fail");
+        $("#response").show("500").delay(5000).fadeOut(1000);
+      }
     });
   }
-
-  $("#analiseDesktop").show(1000);
-  $("#analiseMobile").show(1000);
 });
