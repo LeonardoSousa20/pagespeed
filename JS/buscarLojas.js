@@ -175,14 +175,12 @@ $(document).on("click", "#confirm", function () {
 
       request.onload = function () {
         if (this.readyState == 4 && this.status == 200) {
-          $("#response-cadastro").text(
-            "Analise da loja inativada com sucesso."
-          );
+          $("#response-busca").text("Analise da loja inativada com sucesso.");
           $("#response").removeClass("fail");
           $("#response").addClass("sucess");
           $("#response").show("1000").delay(10000).fadeOut(1000);
         } else if (this.readyState == 4 && this.status == 400) {
-          $("#response-cadastro").text("Erro ao inativar analise da loja.");
+          $("#response-busca").text("Erro ao inativar analise da loja.");
           $("#response").removeClass("fail");
           $("#response").addClass("sucess");
           $("#response").show("1000").delay(10000).fadeOut(1000);
@@ -203,12 +201,12 @@ $(document).on("click", "#confirm", function () {
 
       request.onload = function () {
         if (this.readyState == 4 && this.status == 200) {
-          $("#response-cadastro").text("Analise da loja ativada com sucesso.");
+          $("#response-busca").text("Analise da loja ativada com sucesso.");
           $("#response").removeClass("fail");
           $("#response").addClass("sucess");
           $("#response").show("1000").delay(10000).fadeOut(1000);
         } else if (this.readyState == 4 && this.status == 400) {
-          $("#response-cadastro").text("Erro ao ativar analise da loja.");
+          $("#response-busca").text("Erro ao ativar analise da loja.");
           $("#response").removeClass("fail");
           $("#response").addClass("sucess");
           $("#response").show("1000").delay(10000).fadeOut(1000);
