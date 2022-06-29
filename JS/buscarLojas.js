@@ -15,7 +15,7 @@ $("#buscar").click(function () {
       lojas_data += "<div class=table>";
       lojas_data += "<span>ID</span>";
       lojas_data += "<span>Domínio</span>";
-      lojas_data += "<span>Data ultima atualização</span>";
+      lojas_data += "<span>Data ultima analise</span>";
       lojas_data += "<span>Analise ativa</span>";
       lojas_data += "</div>";
 
@@ -77,7 +77,7 @@ $("#buscar").click(function () {
       lojas_data += "<div class=table>";
       lojas_data += "<span>ID</span>";
       lojas_data += "<span>Domínio</span>";
-      lojas_data += "<span>Data ultima atualização</span>";
+      lojas_data += "<span>Data ultima analise</span>";
       lojas_data += "<span>Analise ativa</span>";
       lojas_data += "</div>";
 

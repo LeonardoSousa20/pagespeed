@@ -1,15 +1,20 @@
 $("#analiseDesktop").hide();
 $("#analiseMobile").hide();
+
 $("#listarAnalise").click(function () {
   let url = `https://pagespeed.awsli.com.br/v1/analises/` + $("#idLoja").val();
 
   if ($("#idLoja").val() == "") {
     alert("Digite um ID");
   } else if (!$("#idLoja").val() == "") {
-    let xhr = $.getJSON(url, function (data, statusText, xhr) {
+    let xhr = $.getJSON(url, function desktop(data, statusText, xhr) {
       labelsDesktop = [];
       labelsMobile = [];
+      $("#analiseDesktop").remove();
+      $("#analiseMobile").remove();
 
+      $("#resultado-analise").append('<canvas id="analiseDesktop"></canvas>');
+      $("#resultado-analise").append('<canvas id="analiseMobile"></canvas>');
       /*Dados Desktop*/
       tituloDesktop = data[0]["loja.dominio"] + " - DESKTOP";
       ScoreDesktop = [];
@@ -80,10 +85,11 @@ $("#listarAnalise").click(function () {
       });
 
       /* Criação Grafico Desktop*/
+
       const ctxDesktop = document
         .getElementById("analiseDesktop")
         .getContext("2d");
-      const ChartDesktop = new Chart(ctxDesktop, {
+      let ChartDesktop = new Chart(ctxDesktop, {
         type: "bar",
         data: {
           labels: labelsDesktop,
@@ -220,7 +226,8 @@ $("#listarAnalise").click(function () {
       const ctxMobile = document
         .getElementById("analiseMobile")
         .getContext("2d");
-      const ChartMobile = new Chart(ctxMobile, {
+
+      let ChartMobile = new Chart(ctxMobile, {
         type: "bar",
         data: {
           labels: labelsMobile,
@@ -283,12 +290,14 @@ $("#listarAnalise").click(function () {
           },
         },
       });
+
       $("#analiseDesktop").show(1000);
       $("#analiseMobile").show(1000);
+      $("#analiseMobile").addClass("true");
+      $("#analiseDesktop").addClass("true");
     }).fail(function () {
       var status = xhr.status;
       if (status === 404) {
-        console.log("opa");
         $("#response-analise").text("Loja não encontrada");
         $("#response").removeClass("sucess");
         $("#response").addClass("fail");

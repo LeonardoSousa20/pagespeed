@@ -8,8 +8,9 @@ $("#enviar").click(function () {
   function removeHttp(dominio) {
     return dominio.replace(/https?:?\/\//, "");
   }
+
   jsonLoja = {
-    dominio: removeHttp(dominio),
+    dominio: removeHttp(dominio).trim(),
     conta_id: conta,
   };
 
