@@ -57,6 +57,7 @@ $("#buscar").click(function () {
       $("#resultado-busca").append(lojas_data);
       $("#input-div").css("border-bottom", "1px solid rgba(206, 212, 216, 1)");
       $("#input-div").css("height", "100px");
+      $("#resultado-busca").slideDown("slow");
     }).fail(function () {
       var status = xhr.status;
       if (status === 404) {
@@ -120,6 +121,7 @@ $("#buscar").click(function () {
       $("#resultado-busca").append(lojas_data);
       $("#input-div").css("border-bottom", "1px solid rgba(206, 212, 216, 1)");
       $("#input-div").css("height", "100px");
+      $("#resultado-busca").slideDown("slow");
     });
   }
 });
@@ -178,12 +180,20 @@ $(document).on("click", "#confirm", function () {
           $("#response-busca").text("Analise da loja inativada com sucesso.");
           $("#response").removeClass("fail");
           $("#response").addClass("sucess");
-          $("#response").show("1000").delay(10000).fadeOut(1000);
+          $("#response").slideDown(function () {
+            setTimeout(function () {
+              $("#response").slideUp();
+            }, 5000);
+          });
         } else if (this.readyState == 4 && this.status == 400) {
           $("#response-busca").text("Erro ao inativar analise da loja.");
           $("#response").removeClass("fail");
           $("#response").addClass("sucess");
-          $("#response").show("1000").delay(10000).fadeOut(1000);
+          $("#response").slideDown(function () {
+            setTimeout(function () {
+              $("#response").slideUp();
+            }, 5000);
+          });
         }
       };
     }
@@ -204,12 +214,20 @@ $(document).on("click", "#confirm", function () {
           $("#response-busca").text("Analise da loja ativada com sucesso.");
           $("#response").removeClass("fail");
           $("#response").addClass("sucess");
-          $("#response").show("1000").delay(10000).fadeOut(1000);
+          $("#response").slideDown(function () {
+            setTimeout(function () {
+              $("#response").slideUp();
+            }, 5000);
+          });
         } else if (this.readyState == 4 && this.status == 400) {
           $("#response-busca").text("Erro ao ativar analise da loja.");
           $("#response").removeClass("fail");
           $("#response").addClass("sucess");
-          $("#response").show("1000").delay(10000).fadeOut(1000);
+          $("#response").slideDown(function () {
+            setTimeout(function () {
+              $("#response").slideUp();
+            }, 5000);
+          });
         }
       };
     }

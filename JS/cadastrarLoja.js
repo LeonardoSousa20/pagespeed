@@ -27,13 +27,21 @@ $("#enviar").click(function () {
           "Loja Cadastrada com sucesso.";
         $("#response").removeClass("fail");
         $("#response").addClass("sucess");
-        $("#response").show("1000").delay(10000).fadeOut(1000);
+        $("#response").slideDown(function () {
+          setTimeout(function () {
+            $("#response").slideUp();
+          }, 5000);
+        });
       } else if (this.readyState == 4 && this.status == 400) {
         document.getElementById("response-cadastro").innerHTML =
           "Loja já cadastrada.";
         $("#response").removeClass("sucess");
         $("#response").addClass("fail");
-        $("#response").show("1000").delay(10000).fadeOut(1000);
+        $("#response").slideDown(function () {
+          setTimeout(function () {
+            $("#response").slideUp();
+          }, 5000);
+        });
       }
       return request.responseText;
     };

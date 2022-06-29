@@ -290,18 +290,20 @@ $("#listarAnalise").click(function () {
           },
         },
       });
-
-      $("#analiseDesktop").show(1000);
-      $("#analiseMobile").show(1000);
-      $("#analiseMobile").addClass("true");
-      $("#analiseDesktop").addClass("true");
+      $("#resultado-analise").slideDown("slow");
+      $("#analiseDesktop").slideDown("slow");
+      $("#analiseMobile").slideDown("slow");
     }).fail(function () {
       var status = xhr.status;
       if (status === 404) {
         $("#response-analise").text("Loja não encontrada");
         $("#response").removeClass("sucess");
         $("#response").addClass("fail");
-        $("#response").show("500").delay(5000).fadeOut(1000);
+        $("#response").slideDown(function () {
+          setTimeout(function () {
+            $("#response").slideUp();
+          }, 5000);
+        });
       }
     });
   }
