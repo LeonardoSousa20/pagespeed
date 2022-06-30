@@ -24,9 +24,9 @@ canvas {
   margin: 0;
   padding: 0;
 }
-#resultado3 {
-  border-top: 2px solid rgba(206, 212, 216, 1);
-  padding-top: 50px;
+
+h3 {
+  text-align: center;
 }
 .header {
   background-color: white;
