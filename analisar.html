@@ -70,22 +70,36 @@
     <div class="resultado">
       <div class="input-div-analise">
         <div class="input-analisar">
-          <input type="text" placeholder="Insira o ID da loja" id="idLoja" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
-          <button id="listarAnalise">Listar Analises</button>
+          <input type="text" placeholder="ID da loja" id="idLoja" onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="m-input">
+          <input type="text" placeholder="ID da loja 2" id="idLoja2" onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="m-input">
+          <button id="listarComparacao" class="listar">Listar Comparação</button>
+          <button id="listarAnalise" class="listar">Listar Analises</button>
+
         </div>
-        <button id="analiseCsv" class="btn-light">Exportar Analises</button>
+        <div>
+          <button id="comparar" class="btn-light">Comparar</button>
+          <button id="analiseCsv" class="btn-light">Exportar Analises</button>
+        </div>
 
       </div>
       <div id="response" class="response fail">
         <div id="response-analise" class="response-analise"></div>
       </div>
-      <div class="charts" id="resultado-analise">
+      <div class="charts" id="resultado1">
+        <canvas class=" line-chart" id="analiseDesktop1"></canvas>
+      </div>
+      <div class="charts" id="resultado2">
+        <canvas class=" line-chart" id="analiseDesktop2"></canvas>
+      </div>
 
-        <canvas class="line-chart" id="analiseDesktop"></canvas>
-        <canvas class="line-chart" id="analiseMobile"></canvas>
-
+      <div class="charts" id="resultado3">
+        <canvas class=" line-chart" id="analiseMobile1"></canvas>
 
       </div>
+      <div class="charts" id="resultado4">
+        <canvas class="line-chart" id="analiseMobile2"></canvas>
+      </div>
+
     </div>
   </div>
 
