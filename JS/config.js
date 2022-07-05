@@ -1,5 +1,5 @@
 $("#response").hide();
-$("#version").text("v1.0");
+$("#version").text("develop").css("font-weight", "600");
 $("#modal-ativacao").hide();
 $("#resultado-busca").hide();
 $("#idLoja2").hide();

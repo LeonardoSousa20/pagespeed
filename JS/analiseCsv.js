@@ -24,7 +24,10 @@ $("#analiseCsv").click(async function () {
       const a = document.createElement("a");
       a.setAttribute("hidden", "");
       a.setAttribute("href", url);
-      a.setAttribute("download", "Pagespeed - Analises.csv");
+      a.setAttribute(
+        "download",
+        "Analise - Loja " + $("#idLoja").val() + ".csv"
+      );
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);

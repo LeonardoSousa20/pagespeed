@@ -12,6 +12,8 @@ $("#listarAnalise").click(function () {
       labelsMobile = [];
       $("#analiseDesktop1").remove();
       $("#analiseMobile1").remove();
+      $("#analiseDesktop2").remove();
+      $("#analiseMobile2").remove();
 
       $("#resultado1").append('<canvas id="analiseDesktop1"></canvas>');
       $("#resultado3").append('<canvas id="analiseMobile1"></canvas>');
@@ -89,6 +91,7 @@ $("#listarAnalise").click(function () {
       const ctxDesktop = document
         .getElementById("analiseDesktop1")
         .getContext("2d");
+
       let ChartDesktop = new Chart(ctxDesktop, {
         type: "bar",
         data: {
@@ -358,13 +361,13 @@ $("#listarComparacao").click(function () {
       data.forEach((element) => {
         if (element.strategy == "desktop") {
           labelsDesktop1.push($.format.date(element.createdAt, "dd/MM/yyyy"));
-          labelsDesktop1 = labelsDesktop1.slice(0, 10);
+          labelsDesktop1 = labelsDesktop1.slice(0, 5);
         }
       });
       data.forEach((element) => {
         if (element.strategy == "desktop") {
           ScoreDesktop1.push(element.score);
-          ScoreDesktop1 = ScoreDesktop1.slice(0, 10);
+          ScoreDesktop1 = ScoreDesktop1.slice(0, 5);
         }
       });
       data.forEach((element) => {
@@ -379,7 +382,7 @@ $("#listarComparacao").click(function () {
       data.forEach((element) => {
         if (element.strategy == "desktop") {
           speed_indexDesktop1.push(element.speed_index);
-          speed_indexDesktop1 = speed_indexDesktop1.slice(0, 10);
+          speed_indexDesktop1 = speed_indexDesktop1.slice(0, 5);
         }
       });
       data.forEach((element) => {
@@ -388,7 +391,7 @@ $("#listarComparacao").click(function () {
             element.largest_contentful_paint
           );
           largest_contentful_paintDesktop1 =
-            largest_contentful_paintDesktop1.slice(0, 10);
+            largest_contentful_paintDesktop1.slice(0, 5);
         }
       });
       data.forEach((element) => {
@@ -413,7 +416,7 @@ $("#listarComparacao").click(function () {
         if (element.strategy == "desktop") {
           cumulative_layout_shiftDesktop1.push(element.cumulative_layout_shift);
           cumulative_layout_shiftDesktop1 =
-            cumulative_layout_shiftDesktop1.slice(0, 10);
+            cumulative_layout_shiftDesktop1.slice(0, 5);
         }
       });
 
@@ -501,13 +504,13 @@ $("#listarComparacao").click(function () {
       data.forEach((element) => {
         if (element.strategy == "mobile") {
           labelsMobile1.push($.format.date(element.createdAt, "dd/MM/yyyy"));
-          labelsMobile1 = labelsMobile1.slice(0, 10);
+          labelsMobile1 = labelsMobile1.slice(0, 5);
         }
       });
       data.forEach((element) => {
         if (element.strategy == "mobile") {
           ScoreMobile1.push(element.score);
-          ScoreMobile1 = ScoreMobile1.slice(0, 10);
+          ScoreMobile1 = ScoreMobile1.slice(0, 5);
         }
       });
       data.forEach((element) => {
@@ -522,7 +525,7 @@ $("#listarComparacao").click(function () {
       data.forEach((element) => {
         if (element.strategy == "mobile") {
           speed_indexMobile1.push(element.speed_index);
-          speed_indexMobile1 = speed_indexMobile1.slice(0, 10);
+          speed_indexMobile1 = speed_indexMobile1.slice(0, 5);
         }
       });
       data.forEach((element) => {
@@ -531,19 +534,19 @@ $("#listarComparacao").click(function () {
             element.largest_contentful_paint
           );
           largest_contentful_paintMobile1 =
-            largest_contentful_paintMobile1.slice(0, 10);
+            largest_contentful_paintMobile1.slice(0, 5);
         }
       });
       data.forEach((element) => {
         if (element.strategy == "mobile") {
           time_to_interactiveMobile1.push(element.time_to_interactive);
-          time_to_interactiveMobile1 = time_to_interactiveMobile1.slice(0, 10);
+          time_to_interactiveMobile1 = time_to_interactiveMobile1.slice(0, 5);
         }
       });
       data.forEach((element) => {
         if (element.strategy == "mobile") {
           total_blocking_timeMobile1.push(element.total_blocking_time);
-          total_blocking_timeMobile1 = total_blocking_timeMobile1.slice(0, 10);
+          total_blocking_timeMobile1 = total_blocking_timeMobile1.slice(0, 5);
         }
       });
       data.forEach((element) => {
@@ -633,10 +636,10 @@ $("#listarComparacao").click(function () {
       labelsDesktop2 = [];
       labelsMobile2 = [];
       $("#analiseDesktop2").remove();
-      $("#analiseMobile4").remove();
+      $("#analiseMobile2").remove();
 
       $("#resultado2").append('<canvas id="analiseDesktop2"></canvas>');
-      $("#resultado4").append('<canvas id="analiseMobile4"></canvas>');
+      $("#resultado4").append('<canvas id="analiseMobile2"></canvas>');
       /*Dados Desktop*/
       tituloDesktop2 = data[0]["loja.dominio"] + " - DESKTOP";
       ScoreDesktop2 = [];
@@ -651,13 +654,13 @@ $("#listarComparacao").click(function () {
       data.forEach((element) => {
         if (element.strategy == "desktop") {
           labelsDesktop2.push($.format.date(element.createdAt, "dd/MM/yyyy"));
-          labelsDesktop2 = labelsDesktop2.slice(0, 10);
+          labelsDesktop2 = labelsDesktop2.slice(0, 5);
         }
       });
       data.forEach((element) => {
         if (element.strategy == "desktop") {
           ScoreDesktop2.push(element.score);
-          ScoreDesktop2 = ScoreDesktop2.slice(0, 10);
+          ScoreDesktop2 = ScoreDesktop2.slice(0, 5);
         }
       });
       data.forEach((element) => {
@@ -672,7 +675,7 @@ $("#listarComparacao").click(function () {
       data.forEach((element) => {
         if (element.strategy == "desktop") {
           speed_indexDesktop2.push(element.speed_index);
-          speed_indexDesktop2 = speed_indexDesktop2.slice(0, 10);
+          speed_indexDesktop2 = speed_indexDesktop2.slice(0, 5);
         }
       });
       data.forEach((element) => {
@@ -681,7 +684,7 @@ $("#listarComparacao").click(function () {
             element.largest_contentful_paint
           );
           largest_contentful_paintDesktop2 =
-            largest_contentful_paintDesktop2.slice(0, 10);
+            largest_contentful_paintDesktop2.slice(0, 5);
         }
       });
       data.forEach((element) => {
@@ -706,7 +709,7 @@ $("#listarComparacao").click(function () {
         if (element.strategy == "desktop") {
           cumulative_layout_shiftDesktop2.push(element.cumulative_layout_shift);
           cumulative_layout_shiftDesktop2 =
-            cumulative_layout_shiftDesktop2.slice(0, 10);
+            cumulative_layout_shiftDesktop2.slice(0, 5);
         }
       });
 
@@ -794,13 +797,13 @@ $("#listarComparacao").click(function () {
       data.forEach((element) => {
         if (element.strategy == "mobile") {
           labelsMobile2.push($.format.date(element.createdAt, "dd/MM/yyyy"));
-          labelsMobile2 = labelsMobile2.slice(0, 10);
+          labelsMobile2 = labelsMobile2.slice(0, 5);
         }
       });
       data.forEach((element) => {
         if (element.strategy == "mobile") {
           ScoreMobile2.push(element.score);
-          ScoreMobile2 = ScoreMobile2.slice(0, 10);
+          ScoreMobile2 = ScoreMobile2.slice(0, 5);
         }
       });
       data.forEach((element) => {
@@ -815,7 +818,7 @@ $("#listarComparacao").click(function () {
       data.forEach((element) => {
         if (element.strategy == "mobile") {
           speed_indexMobile2.push(element.speed_index);
-          speed_indexMobile2 = speed_indexMobile2.slice(0, 10);
+          speed_indexMobile2 = speed_indexMobile2.slice(0, 5);
         }
       });
       data.forEach((element) => {
@@ -824,19 +827,19 @@ $("#listarComparacao").click(function () {
             element.largest_contentful_paint
           );
           largest_contentful_paintMobile2 =
-            largest_contentful_paintMobile2.slice(0, 10);
+            largest_contentful_paintMobile2.slice(0, 5);
         }
       });
       data.forEach((element) => {
         if (element.strategy == "mobile") {
           time_to_interactiveMobile2.push(element.time_to_interactive);
-          time_to_interactiveMobile2 = time_to_interactiveMobile2.slice(0, 10);
+          time_to_interactiveMobile2 = time_to_interactiveMobile2.slice(0, 5);
         }
       });
       data.forEach((element) => {
         if (element.strategy == "mobile") {
           total_blocking_timeMobile2.push(element.total_blocking_time);
-          total_blocking_timeMobile2 = total_blocking_timeMobile2.slice(0, 10);
+          total_blocking_timeMobile2 = total_blocking_timeMobile2.slice(0, 5);
         }
       });
       data.forEach((element) => {
