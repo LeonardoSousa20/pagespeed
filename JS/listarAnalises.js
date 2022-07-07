@@ -478,6 +478,7 @@ $("#listarComparacao").click(function () {
 
         options: {
           responsive: true,
+          maintainAspectRatio: false,
           scales: {
             y: {
               beginAtZero: true,
@@ -617,6 +618,7 @@ $("#listarComparacao").click(function () {
 
         options: {
           responsive: true,
+          maintainAspectRatio: false,
           scales: {
             y: {
               beginAtZero: true,
@@ -771,6 +773,7 @@ $("#listarComparacao").click(function () {
 
         options: {
           responsive: true,
+          maintainAspectRatio: false,
           scales: {
             y: {
               beginAtZero: true,
@@ -909,6 +912,7 @@ $("#listarComparacao").click(function () {
 
         options: {
           responsive: true,
+          maintainAspectRatio: false,
           scales: {
             y: {
               beginAtZero: true,

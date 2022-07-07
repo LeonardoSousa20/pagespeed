@@ -29,6 +29,9 @@ a {
   box-sizing: border-box;
   gap: 50px;
 }
+.chartCard div {
+  /* height: 300px; */
+}
 h3 {
   text-align: center;
 }
@@ -174,12 +177,16 @@ nav {
   font-size: 24px;
 }
 .conteudo {
+  flex-wrap: wrap;
   box-sizing: border-box;
-  margin: 0 20px;
-  width: 60%;
+  width: calc(80% - 250px);
   position: absolute;
-  margin: 100px 450px;
   transition: 2s;
+  top: 100px;
+  left: 250px;
+  right: 0;
+  bottom: 0;
+  margin: auto;
 }
 .resultado {
   border: 1px solid rgba(206, 212, 216, 1);
@@ -365,18 +372,12 @@ button:hover {
 /* Media query */
 
 @media only screen and (max-width: 1367px) {
-  .conteudo {
-    max-width: 100%;
-    margin-left: 300px;
-    margin-right: 100px;
-    transition: 2s;
-  }
-  .resultado {
-    width: 90%;
-  }
   input[type="text"] {
     max-width: 120px;
     transition: 2s;
+  }
+  .conteudo {
+    width: calc(100% - 250);
   }
 }
 @media only screen and (max-width: 1155px) {
@@ -385,8 +386,23 @@ button:hover {
     grid-template-columns: 100px 1fr 100px 100px;
   }
 }
-@media only screen and (max-width: 1400px) {
-  .one-store {
-    height: 410px !important;
+@media only screen and (max-width: 1370px) {
+  .charts {
+    height: 400px !important;
+  }
+}
+@media only screen and (max-width: 1440px) {
+  .charts {
+    height: 400px !important;
+  }
+}
+@media only screen and (max-width: 1680px) {
+  .charts {
+    height: 500px !important;
+  }
+}
+@media only screen and (min-width: 1900px) {
+  .charts {
+    height: 700px !important;
   }
 }
