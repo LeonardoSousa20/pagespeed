@@ -15,6 +15,9 @@ $("#listarAnalise").click(function () {
       $("#analiseDesktop2").remove();
       $("#analiseMobile2").remove();
 
+      $("#resultado2").hide();
+      $("#resultado4").hide();
+
       $("#resultado1").append('<canvas id="analiseDesktop1"></canvas>');
       $("#resultado3").append('<canvas id="analiseMobile1"></canvas>');
       /*Dados Desktop*/
@@ -153,6 +156,14 @@ $("#listarAnalise").click(function () {
             title: {
               display: true,
               text: tituloDesktop,
+              padding: 20,
+              font: {
+                size: 15,
+                family: "arial",
+              },
+            },
+            legend: {
+              position: "top",
             },
           },
         },
@@ -293,6 +304,13 @@ $("#listarAnalise").click(function () {
             title: {
               display: true,
               text: tituloMobile,
+              padding: 20,
+              font: {
+                size: 15,
+              },
+            },
+            legend: {
+              position: "top",
             },
           },
         },
@@ -346,6 +364,8 @@ $("#listarComparacao").click(function () {
       labelsMobile1 = [];
       $("#analiseDesktop1").remove();
       $("#analiseMobile1").remove();
+      $("#resultado2").show();
+      $("#resultado4").show();
 
       $("#resultado1").append('<canvas id="analiseDesktop1"></canvas>');
       $("#resultado3").append('<canvas id="analiseMobile1"></canvas>');
@@ -488,6 +508,13 @@ $("#listarComparacao").click(function () {
             title: {
               display: true,
               text: tituloDesktop1,
+              padding: 20,
+              font: {
+                size: 15,
+              },
+            },
+            legend: {
+              position: "top",
             },
           },
         },
@@ -628,6 +655,13 @@ $("#listarComparacao").click(function () {
             title: {
               display: true,
               text: tituloMobile1,
+              padding: 20,
+              font: {
+                size: 15,
+              },
+            },
+            legend: {
+              position: "top",
             },
           },
         },
@@ -783,6 +817,13 @@ $("#listarComparacao").click(function () {
             title: {
               display: true,
               text: tituloDesktop2,
+              padding: 20,
+              font: {
+                size: 15,
+              },
+            },
+            legend: {
+              position: "top",
             },
           },
         },
@@ -922,6 +963,13 @@ $("#listarComparacao").click(function () {
             title: {
               display: true,
               text: tituloMobile2,
+              padding: 20,
+              font: {
+                size: 15,
+              },
+            },
+            legend: {
+              position: "top",
             },
           },
         },

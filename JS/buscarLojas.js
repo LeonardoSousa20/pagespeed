@@ -63,7 +63,7 @@ $("#buscar").click(function () {
       if (status === 404) {
         $("#response-busca").text("Loja não encontrada");
         $("#response").addClass("fail");
-        $("#response").show("500").delay(5000).fadeOut(1000);
+        $("#response").slideDown("500").delay(5000).fadeOut(1000);
       }
     });
   } else {

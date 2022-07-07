@@ -204,7 +204,7 @@ nav {
 .table {
   display: grid;
   grid-template-columns: 80px 1fr 200px 100px;
-  max-width: 1080px;
+  width: 100%;
   color: #607081;
   font-size: 12px;
   padding: 10px 10px;
@@ -220,7 +220,7 @@ nav {
 .table-row {
   display: grid;
   grid-template-columns: 80px 1fr 200px 100px;
-  max-width: 1080px;
+  width: 100%;
   padding: 20px 10px;
   box-sizing: border-box;
   align-items: center;
@@ -348,12 +348,34 @@ button:hover {
   font-size: 20px;
 }
 .sucess {
-  background: #77dd77;
-  border-color: #77dd77;
+  align-items: center;
+  background-color: #ffd6db;
+  border-color: #e3f3f3;
+  border: 1px solid #2bc4c3;
+  border-radius: 0.25rem;
+  border-left: 4px solid #2bc4c3;
+  color: rgba(70, 55, 88, 1);
+  display: flex;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  text-shadow: none;
+  padding: 20px 15px;
 }
 .fail {
-  background: #f95a61;
-  border-color: #f95a61;
+  align-items: center;
+  background-color: #ffd6db;
+  border-color: rgba(229, 0, 25);
+  border: 1px solid rgba(229, 0, 25);
+  border-radius: 0.25rem;
+  border-left: 4px solid rgba(229, 0, 25);
+  color: rgba(70, 55, 88, 1);
+  display: flex;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  text-shadow: none;
+  padding: 20px 15px;
 }
 
 .btn-light {
