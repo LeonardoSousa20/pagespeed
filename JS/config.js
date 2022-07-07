@@ -20,7 +20,7 @@ $("#sidebar-toggle").click(function () {
     $(".sidebar-toggle>svg").css("transform", "rotate(180deg)");
   } else {
     $(".sidebar-item-btn>span").show("fast");
-    $(".side-bar").animate({ width: "200px" }, 100);
+    $(".side-bar").animate({ width: "250px" }, 100);
     $(".side-bar").addClass("open");
     $(".side-bar").removeClass("close");
     $(".sidebar-toggle>svg").css("transform", "");
