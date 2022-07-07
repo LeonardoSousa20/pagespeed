@@ -143,6 +143,7 @@ $("#listarAnalise").click(function () {
 
         options: {
           responsive: true,
+          maintainAspectRatio: false,
           scales: {
             y: {
               beginAtZero: true,
@@ -282,6 +283,7 @@ $("#listarAnalise").click(function () {
 
         options: {
           responsive: true,
+          maintainAspectRatio: false,
           scales: {
             y: {
               beginAtZero: true,

@@ -388,3 +388,8 @@ button:hover {
     grid-template-columns: 100px 1fr 100px 100px;
   }
 }
+@media only screen and (max-width: 1400px) {
+  .one-store {
+    height: 410px !important;
+  }
+}
