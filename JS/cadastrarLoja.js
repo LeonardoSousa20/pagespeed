@@ -21,29 +21,26 @@ $("#enviar").click(function () {
     request.send(JSON.stringify(jsonLoja));
 
     request.onload = function () {
-      console.log(this.responseText);
       if (this.readyState == 4 && this.status == 200) {
-        document.getElementById("response-cadastro").innerHTML =
+        document.getElementById("response").innerHTML =
           "Loja Cadastrada com sucesso.";
         $("#response").removeClass("fail");
         $("#response").addClass("sucess");
-        $("#response").slideDown(function () {
+        $("#response").animate({ width: "toggle" }, 150, function () {
           setTimeout(function () {
-            $("#response").slideUp();
+            $("#response").animate({ width: "toggle" });
           }, 5000);
         });
       } else if (this.readyState == 4 && this.status == 400) {
-        document.getElementById("response-cadastro").innerHTML =
-          "Loja já cadastrada.";
+        document.getElementById("response").innerHTML = "Loja já cadastrada.";
         $("#response").removeClass("sucess");
         $("#response").addClass("fail");
-        $("#response").slideDown(function () {
+        $("#response").animate({ width: "toggle" }, 150, function () {
           setTimeout(function () {
-            $("#response").slideUp();
+            $("#response").animate({ width: "toggle" });
           }, 5000);
         });
       }
-      return request.responseText;
     };
   }
   fazPost(url, jsonLoja);

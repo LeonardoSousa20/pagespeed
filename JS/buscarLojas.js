@@ -61,9 +61,13 @@ $("#buscar").click(function () {
     }).fail(function () {
       var status = xhr.status;
       if (status === 404) {
-        $("#response-busca").text("Loja não encontrada");
+        $("#response").text("Loja não encontrada");
         $("#response").addClass("fail");
-        $("#response").slideDown("500").delay(5000).fadeOut(1000);
+        $("#response").animate({ width: "toggle" }, 150, function () {
+          setTimeout(function () {
+            $("#response").animate({ width: "toggle" });
+          }, 5000);
+        });
       }
     });
   } else {

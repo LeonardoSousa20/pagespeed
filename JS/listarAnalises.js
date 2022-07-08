@@ -320,12 +320,12 @@ $("#listarAnalise").click(function () {
     }).fail(function () {
       var status = xhr.status;
       if (status === 404) {
-        $("#response-analise").text("Loja não encontrada");
+        $("#response").text("Loja não encontrada");
         $("#response").removeClass("sucess");
         $("#response").addClass("fail");
-        $("#response").slideDown(function () {
+        $("#response").animate({ width: "toggle" }, 150, function () {
           setTimeout(function () {
-            $("#response").slideUp();
+            $("#response").animate({ width: "toggle" });
           }, 5000);
         });
       }
@@ -359,7 +359,7 @@ $("#listarComparacao").click(function () {
       `https://pagespeed.awsli.com.br/v1/analises/` + $("#idLoja").val();
     let url2 =
       `https://pagespeed.awsli.com.br/v1/analises/` + $("#idLoja2").val();
-    let xhr = $.getJSON(url1, function desktop(data, statusText, xhr) {
+    let xhr1 = $.getJSON(url1, function desktop(data, statusText, xhr) {
       labelsDesktop1 = [];
       labelsMobile1 = [];
       $("#analiseDesktop1").remove();
@@ -668,6 +668,18 @@ $("#listarComparacao").click(function () {
       });
       $("#resultado1").slideDown("slow");
       $("#resultado3").slideDown("slow");
+    }).fail(function () {
+      var status = xhr1.status;
+      if (status === 404) {
+        $("#response").text("Loja 1 não encontrada");
+        $("#response").removeClass("sucess");
+        $("#response").addClass("fail");
+        $("#response").animate({ width: "toggle" }, 150, function () {
+          setTimeout(function () {
+            $("#response").animate({ width: "toggle" });
+          }, 5000);
+        });
+      }
     });
 
     let xhr2 = $.getJSON(url2, function desktop(data, statusText, xhr) {
@@ -976,6 +988,18 @@ $("#listarComparacao").click(function () {
       });
       $("#resultado2").slideDown("slow");
       $("#resultado4").slideDown("slow");
+    }).fail(function () {
+      var status = xhr2.status;
+      if (status === 404) {
+        $("#response").text("Loja 2 não encontrada");
+        $("#response").removeClass("sucess");
+        $("#response").addClass("fail");
+        $("#response").animate({ width: "toggle" }, 150, function () {
+          setTimeout(function () {
+            $("#response").animate({ width: "toggle" });
+          }, 5000);
+        });
+      }
     });
   }
 });

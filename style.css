@@ -338,18 +338,19 @@ button:hover {
   background-color: #0c9797;
 }
 .response {
-  margin-top: 30px;
   height: 10px;
   padding: 20px 32px;
-  place-content: center;
+  justify-itens: center;
   display: grid;
-  color: rgb(255, 255, 255);
-  text-shadow: 1px 1px rgb(139, 137, 137);
   font-size: 20px;
+  position: absolute;
+  width: 300px;
+  right: -180px;
+  top: -15px;
 }
 .sucess {
   align-items: center;
-  background-color: #ffd6db;
+  background-color: #e3f3f3;
   border-color: #e3f3f3;
   border: 1px solid #2bc4c3;
   border-radius: 0.25rem;
