@@ -1,6 +1,7 @@
 $("#response").hide();
 $("#version").text("develop").css("font-weight", "600");
 $("#modal-ativacao").hide();
+$("#modal-exportacao").hide();
 $("#resultado-busca").hide();
 $("#idLoja2").hide();
 $("#listarComparacao").hide();
@@ -25,4 +26,9 @@ $("#sidebar-toggle").click(function () {
     $(".side-bar").removeClass("close");
     $(".sidebar-toggle>svg").css("transform", "");
   }
+});
+
+// Ajustes font-awesome
+$(".close").click(function () {
+  $(".modal").hide();
 });

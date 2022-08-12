@@ -317,6 +317,9 @@ $("#listarAnalise").click(function () {
       });
       $("#resultado1").slideDown("slow");
       $("#resultado3").slideDown("slow");
+      $("#contentAnalise").attr("analise", "1");
+      $("#analiseCsv").removeClass("disabled");
+      $("#analiseCsv").removeAttr("disabled");
     }).fail(function () {
       var status = xhr.status;
       if (status === 404) {
@@ -359,7 +362,8 @@ $("#listarComparacao").click(function () {
       `https://pagespeed.awsli.com.br/v1/analises/` + $("#idLoja").val();
     let url2 =
       `https://pagespeed.awsli.com.br/v1/analises/` + $("#idLoja2").val();
-    let xhr1 = $.getJSON(url1, function desktop(data, statusText, xhr) {
+
+    let xhr1 = $.getJSON(url1, function (data, statusText, xhr) {
       labelsDesktop1 = [];
       labelsMobile1 = [];
       $("#analiseDesktop1").remove();
@@ -666,13 +670,14 @@ $("#listarComparacao").click(function () {
           },
         },
       });
+
       $("#resultado1").slideDown("slow");
       $("#resultado3").slideDown("slow");
     }).fail(function () {
-      var status = xhr1.status;
+      let status = xhr1.status;
       if (status === 404) {
+        $("#resultado1").attr("status", "fail");
         $("#response").text("Loja 1 não encontrada");
-        $("#response").removeClass("sucess");
         $("#response").addClass("fail");
         $("#response").animate({ width: "toggle" }, 150, function () {
           setTimeout(function () {
@@ -682,14 +687,16 @@ $("#listarComparacao").click(function () {
       }
     });
 
-    let xhr2 = $.getJSON(url2, function desktop(data, statusText, xhr) {
+    let xhr2 = $.getJSON(url2, function get2(data, status, xhr) {
       labelsDesktop2 = [];
       labelsMobile2 = [];
+      let status2 = xhr2.status;
       $("#analiseDesktop2").remove();
       $("#analiseMobile2").remove();
 
       $("#resultado2").append('<canvas id="analiseDesktop2"></canvas>');
       $("#resultado4").append('<canvas id="analiseMobile2"></canvas>');
+
       /*Dados Desktop*/
       tituloDesktop2 = data[0]["loja.dominio"] + " - DESKTOP";
       ScoreDesktop2 = [];
@@ -986,18 +993,23 @@ $("#listarComparacao").click(function () {
           },
         },
       });
+
       $("#resultado2").slideDown("slow");
       $("#resultado4").slideDown("slow");
+      $("#contentAnalise").attr("analise", "2");
+      $("#analiseCsv").removeClass("disabled");
+      $("#analiseCsv").removeAttr("disabled");
     }).fail(function () {
-      var status = xhr2.status;
+      let status = xhr2.status;
       if (status === 404) {
         $("#response").text("Loja 2 não encontrada");
-        $("#response").removeClass("sucess");
         $("#response").addClass("fail");
         $("#response").animate({ width: "toggle" }, 150, function () {
           setTimeout(function () {
             $("#response").animate({ width: "toggle" });
           }, 5000);
+          $("#resultado2").hide();
+          $("#resultado4").hide();
         });
       }
     });

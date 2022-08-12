@@ -10,6 +10,9 @@ a {
   color: #607081;
   width: 100%;
 }
+i {
+  cursor: pointer;
+}
 .m-input {
   width: 150px !important;
   padding-left: 10px !important;
@@ -29,8 +32,21 @@ a {
   box-sizing: border-box;
   gap: 50px;
 }
-.chartCard div {
-  /* height: 300px; */
+/* Custom scroll bar */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(43, 196, 195, 1);
+  border-radius: 10px;
 }
 h3 {
   text-align: center;
@@ -261,8 +277,8 @@ nav {
   justify-self: start;
   margin-right: 6px;
 }
-.modal-ativacao {
-  background: rgba(0, 0, 0, 0.8);
+.modal {
+  background: rgba(0, 0, 0, 0.733);
   font-size: 20px;
   left: 0;
   height: 100%;
@@ -275,13 +291,56 @@ nav {
   z-index: 2;
 }
 .modal-content {
-  height: 100px;
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 0 !important;
+  font-size: 14px;
+  width: 800px;
+  text-shadow: 0.1px 0 0#463758;
+}
+.modal-title {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30px;
+  color: #463758;
+  padding: 24px 40px;
+  margin: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
-  font-size: 14px;
-  width: 800px;
+}
+.modal-title p {
+  margin: 0;
+}
+.modal-info {
+  padding: 40px 24px 0 40px;
+  border-top: 1px solid rgba(206, 212, 216, 1);
+  line-height: 20px;
+  color: #463758;
+  font-weight: 500;
+}
+.modal-button {
+  justify-self: end;
+  padding: 24px 40px;
+}
+#modal-exportacao .modal-content .modal-info button {
+  width: 200px;
+}
+#modal-exportacao .modal-content .modal-info div {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+.disabled {
+  background: rgb(196, 195, 195) !important;
+  color: rgb(128, 125, 125) !important;
+  cursor: not-allowed !important;
+  border-color: rgb(133, 132, 132) !important;
+}
+.disabled:hover {
+  background: rgb(196, 195, 195) !important;
+  color: rgb(128, 125, 125) !important;
+  cursor: not-allowed !important;
 }
 .confirm-dominio {
   font-weight: bold;
@@ -313,6 +372,7 @@ input[type="text"].input-pesquisa {
   background-position: 7px 13px;
   background-repeat: no-repeat;
   background-size: 24px 24px;
+  width: 150px;
 }
 
 button {
@@ -387,6 +447,14 @@ button:hover {
 .btn-light:hover {
   background-color: rgba(43, 196, 196, 0.103);
 }
+.btn-grey {
+  color: white;
+  background-color: rgba(96, 112, 129, 1);
+}
+.btn-grey:hover {
+  color: white;
+  background-color: rgb(98, 103, 109);
+}
 .input-div-analise {
   display: flex;
   justify-content: space-between;
@@ -396,11 +464,15 @@ button:hover {
 
 @media only screen and (max-width: 1367px) {
   input[type="text"] {
-    max-width: 120px;
+    max-width: 140px;
     transition: 2s;
   }
   .conteudo {
     width: calc(100% - 250);
+  }
+
+  input[type="text"]::placeholder {
+    font-size: 12px;
   }
 }
 @media only screen and (max-width: 1155px) {
@@ -418,10 +490,22 @@ button:hover {
   .charts {
     height: 400px !important;
   }
+  .input-analisar input[type="text"] {
+    width: 80px !important;
+  }
+  input[type="text"]::placeholder {
+    font-size: 12px;
+  }
 }
 @media only screen and (max-width: 1680px) {
   .charts {
     height: 500px !important;
+  }
+  .input-analisar input[type="text"] {
+    width: 80px !important;
+  }
+  input[type="text"]::placeholder {
+    font-size: 13px;
   }
 }
 @media only screen and (min-width: 1900px) {

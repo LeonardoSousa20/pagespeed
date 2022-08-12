@@ -8,7 +8,7 @@
   <title>Buscar Lojas</title>
   <link rel="stylesheet" href="style.css">
 
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
   <script src="/JS/jquery-3.6.0.min.js"></script>
   <script src="/js/jquery-dateformat.js"></script>
 </head>
@@ -40,11 +40,11 @@
     <nav>
       <div class="sidebar-item active">
 
-        <a href="busca.html" class="sidebar-item-btn">
+        <a href="buscar.html" class="sidebar-item-btn">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24">
-            <path fill="#607081" d="m23.698 22.281-6.886-6.89a9.302 9.302 0 0 0 2.174-5.982c0-5.184-4.255-9.4-9.488-9.4C4.264.01 0 4.23 0 9.415c0 5.184 4.255 9.4 9.488 9.4a9.51 9.51 0 0 0 5.892-2.037l6.91 6.91a.969.969 0 0 0 1.408 0 .969.969 0 0 0 0-1.406ZM2.017 9.414c0-4.072 3.354-7.383 7.47-7.383 4.118 0 7.472 3.31 7.472 7.383s-3.354 7.383-7.471 7.383-7.471-3.315-7.471-7.383Z" />
+            <path fill="#463758" d="m23.698 22.281-6.886-6.89a9.302 9.302 0 0 0 2.174-5.982c0-5.184-4.255-9.4-9.488-9.4C4.264.01 0 4.23 0 9.415c0 5.184 4.255 9.4 9.488 9.4a9.51 9.51 0 0 0 5.892-2.037l6.91 6.91a.969.969 0 0 0 1.408 0 .969.969 0 0 0 0-1.406ZM2.017 9.414c0-4.072 3.354-7.383 7.47-7.383 4.118 0 7.472 3.31 7.472 7.383s-3.354 7.383-7.471 7.383-7.471-3.315-7.471-7.383Z" />
           </svg>
-          <span>Buscar Lojas</span>
+          <span style="color: #463758;">Buscar Lojas</span>
         </a>
       </div>
 
@@ -89,20 +89,27 @@
   </div>
 
 
-  <div class="modal-ativacao" id="modal-ativacao">
+  <div class="modal" id="modal-ativacao">
     <div class="resultado m-width modal-content" id="modal-content">
-      <div>
+      <div class="modal-title">
+        <p>Gerenciamento de Analise</p>
+        <i class="fa fa-light fa-xmark close"></i>
+      </div>
+      <div class="modal-info">
         <span>Deseja <span id="status-confirm"></span> a analise loja
           <span id="confirm-dominio" class="confirm-dominio">
 
           </span>
           ?</span>
       </div>
-      <div>
-        <button class="btn-light" id="cancel-confirm">Cancelar</button>
+
+
+      <div class="modal-button">
+        <button class="btn-grey" id="cancel-confirm">Cancelar</button>
         <button id="confirm"></button>
 
       </div>
+
     </div>
   </div>
   <script src="js/buscarLojas.js"></script>

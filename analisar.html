@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Analisar Lojas</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
 
   <script src="/JS/jquery-3.6.0.min.js"></script>
@@ -41,7 +42,7 @@
     <nav>
       <div class="sidebar-item">
 
-        <a href="busca.html" class="sidebar-item-btn">
+        <a href="buscar.html" class="sidebar-item-btn">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24">
             <path fill="#607081" d="m23.698 22.281-6.886-6.89a9.302 9.302 0 0 0 2.174-5.982c0-5.184-4.255-9.4-9.488-9.4C4.264.01 0 4.23 0 9.415c0 5.184 4.255 9.4 9.488 9.4a9.51 9.51 0 0 0 5.892-2.037l6.91 6.91a.969.969 0 0 0 1.408 0 .969.969 0 0 0 0-1.406ZM2.017 9.414c0-4.072 3.354-7.383 7.47-7.383 4.118 0 7.472 3.31 7.472 7.383s-3.354 7.383-7.471 7.383-7.471-3.315-7.471-7.383Z" />
           </svg>
@@ -52,10 +53,10 @@
       <div class="sidebar-item active">
         <a href="analisar.html" class="sidebar-item-btn">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 22 24">
-            <path fill="#607081" fill-rule="evenodd" d="M21.667 4a4 4 0 0 0-4-4H4.333a4 4 0 0 0-4 4v16a4 4 0 0 0 4 4h13.334a4 4 0 0 0 4-4V4Zm-4 18c1.102 0 2-.897 2-2V4c0-1.103-.898-2-2-2H4.333c-1.102 0-2 .897-2 2v16c0 1.103.898 2 2 2h13.334Zm-12-15.333h10.666V5.333H5.667v1.334Zm0 4h10.666V9.333H5.667v1.334Zm0 4h10.666v-1.334H5.667v1.334Zm0 4h10.666v-1.334H5.667v1.334Z" clip-rule="evenodd" />
+            <path fill="#463758" fill-rule="evenodd" d="M21.667 4a4 4 0 0 0-4-4H4.333a4 4 0 0 0-4 4v16a4 4 0 0 0 4 4h13.334a4 4 0 0 0 4-4V4Zm-4 18c1.102 0 2-.897 2-2V4c0-1.103-.898-2-2-2H4.333c-1.102 0-2 .897-2 2v16c0 1.103.898 2 2 2h13.334Zm-12-15.333h10.666V5.333H5.667v1.334Zm0 4h10.666V9.333H5.667v1.334Zm0 4h10.666v-1.334H5.667v1.334Zm0 4h10.666v-1.334H5.667v1.334Z" clip-rule="evenodd" />
           </svg>
 
-          <span>Analisar Lojas</span>
+          <span style="color: #463758;">Analisar Lojas</span>
         </a>
       </div>
 
@@ -83,23 +84,22 @@
           <button id="listarAnalise" class="listar">Listar Analises</button>
 
         </div>
-        <div>
+        <div class="options">
           <button id="comparar" class="btn-light">Comparar</button>
           <button id="analiseCsv" class="btn-light">Exportar Analises</button>
         </div>
 
       </div>
-      <div id="response" class="response"> </div>
 
-      <div class="chartCard">
+      <div class="chartCard" id="contentAnalise">
         <div class="charts" id="resultado1">
           <canvas class=" line-chart" id="analiseDesktop1"></canvas>
         </div>
-        <div class="charts one-store" id="resultado2">
+        <div class="charts" id="resultado2">
           <canvas class=" line-chart" id="analiseDesktop2"></canvas>
         </div>
 
-        <div class="charts one-store" id="resultado3">
+        <div class="charts" id="resultado3">
           <canvas class=" line-chart" id="analiseMobile1"></canvas>
         </div>
         <div class="charts" id="resultado4">
@@ -110,6 +110,27 @@
     </div>
   </div>
 
+  <div class="modal" id="modal-exportacao">
+    <div class="resultado m-width modal-content" id="modal-content">
+      <div class="modal-title">
+        <p>Exportação de Analíse</p>
+        <i class="fa fa-light fa-xmark close"></i>
+      </div>
+      <div class="modal-info">
+
+        <div>
+          <button id="analise1">Loja 1</button>
+          <button id="analise2">Loja 2</button>
+        </div>
+      </div>
+
+
+      <div class="modal-button">
+
+      </div>
+
+    </div>
+  </div>
 
   <script src="js/listarAnalises.js"></script>
   <script src="js/chart.min.js"></script>

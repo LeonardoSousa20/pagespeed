@@ -181,7 +181,7 @@ $(document).on("click", "#confirm", function () {
 
       request.onload = function () {
         if (this.readyState == 4 && this.status == 200) {
-          $("#response-busca").text("Analise da loja inativada com sucesso.");
+          $("#response").text("Analise da loja inativada com sucesso.");
           $("#response").removeClass("fail");
           $("#response").addClass("sucess");
           $("#response").slideDown(function () {
@@ -190,7 +190,7 @@ $(document).on("click", "#confirm", function () {
             }, 5000);
           });
         } else if (this.readyState == 4 && this.status == 400) {
-          $("#response-busca").text("Erro ao inativar analise da loja.");
+          $("#response").text("Erro ao inativar analise da loja.");
           $("#response").removeClass("fail");
           $("#response").addClass("sucess");
           $("#response").slideDown(function () {
@@ -215,7 +215,7 @@ $(document).on("click", "#confirm", function () {
 
       request.onload = function () {
         if (this.readyState == 4 && this.status == 200) {
-          $("#response-busca").text("Analise da loja ativada com sucesso.");
+          $("#response").text("Analise da loja ativada com sucesso.");
           $("#response").removeClass("fail");
           $("#response").addClass("sucess");
           $("#response").slideDown(function () {
@@ -224,7 +224,7 @@ $(document).on("click", "#confirm", function () {
             }, 5000);
           });
         } else if (this.readyState == 4 && this.status == 400) {
-          $("#response-busca").text("Erro ao ativar analise da loja.");
+          $("#response").text("Erro ao ativar analise da loja.");
           $("#response").removeClass("fail");
           $("#response").addClass("sucess");
           $("#response").slideDown(function () {
